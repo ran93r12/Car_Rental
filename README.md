@@ -67,6 +67,23 @@ To run and get result in json, run the following command
   python basic_api.py
 ```
 
+## Docker setup
+Change /my_app_dir with your directory (ref. documentation)
+
+Docker Compose
+
+```bash
+  docker-compose build
+  docker-compose up -d
+```
+
+run server
+
+
+```bash
+  docker-compose run web python manage.py migrate
+```
+
 
 ## Screenshots
 Search view

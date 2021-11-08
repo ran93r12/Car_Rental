@@ -9,3 +9,12 @@ cd /usr/lib/python3/dist-packages/django\db\backends\mysql  #for linux
 then go to operations.py and find query = query.decode(errors='replace'). Remove the line and put query = errors='replace'
 
 And all necessary changes were already made in the files in repo.
+
+
+
+Docker installation ::
+
+Change Dockerfile directory /my_app_dir of what your directory,
+Change docker-compose.yml file /my_app_dir of what your directory.
+
+Rest all the changes were made on setting.py in django file.

@@ -11,7 +11,7 @@ Designing a API to get top 3 nearest locations from the point we want.
 
 This is a simple GET API build with django and MySQL to get top three nearest locations to the user, with a input of 
 latitude and longitude.
-## Run Locally
+## Run Locally using Python
 Basic requirement of Xampp, MySQL, Python above 3
 
 Clone the project
@@ -67,7 +67,7 @@ To run and get result in json, run the following command
   python basic_api.py
 ```
 
-## Docker setup
+## Docker setup - To run in docker
 Change /my_app_dir with your directory (ref. documentation)
 
 Docker Compose

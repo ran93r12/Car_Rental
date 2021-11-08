@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block content%}
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Map OverView</title>
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+<link href="https://api.mapbox.com/mapbox-gl-js/v2.5.1/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.5.1/mapbox-gl.js"></script>
+<style>
+/*body { margin: 0; padding: 0; }*/
+#map { position: fixed; top: 0; bottom: 0; width: 100%; height: 100%; margin-top: 220px;}
+h3{
+	position: fixed;
+	top: 120px;
+	color: white;
+}
+</style>
+</head>
+<body>
+<h3>{{output}}</h3>
+<div id="map"></div>
+<script>
+	mapboxgl.accessToken = 'pk.eyJ1IjoicmFuOTNyIiwiYSI6ImNrdm80MjN3dzFmbTEyeG91bmtmbmZ4bjQifQ.RioP9lrjtUV5S3j3zBT3OA';
+	const map = new mapboxgl.Map({
+	container: 'map', // container ID
+	style: 'mapbox://styles/mapbox/streets-v11', // style URL
+	center: [83.223,17.72], // starting position [lng, lat]
+	
+	zoom: 9 // starting zoom
+	});
+	map.addControl(new mapboxgl.FullscreenControl({container: document.querySelector('body')}));
+	map.addControl(new mapboxgl.NavigationControl());
+	{% for point in points%}
+	var marker = new mapboxgl.Marker()
+	    .setLngLat([{{point.longitude}},{{point.latitude}}])
+	    .addTo(map);
+	{% endfor %}
+	
+
+
+</script>
+ 
+</body>
+</html>
+
+{% endblock %}
